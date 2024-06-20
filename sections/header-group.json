@@ -5,19 +5,35 @@
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
+        "single_text_AK9Bn3": {
+          "type": "single_text",
+          "settings": {
+            "text1": "LiveChat"
+          }
+        },
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "text": "Welcome to our store",
+            "text": "New Styles on Sale : <strong>Up to 40% Off<\/strong>",
             "link": ""
+          }
+        },
+        "group_eFJ3jj": {
+          "type": "group",
+          "settings": {
+            "text2": "LiveChat",
+            "text3": "Blog",
+            "text4": "Team Everlast"
           }
         }
       },
       "block_order": [
-        "announcement-bar-0"
+        "single_text_AK9Bn3",
+        "announcement-bar-0",
+        "group_eFJ3jj"
       ],
       "settings": {
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-2",
         "show_line_separator": true,
         "show_social": false,
         "auto_rotate": false,
@@ -29,9 +45,9 @@
     "header": {
       "type": "header",
       "settings": {
-        "logo_position": "middle-left",
-        "menu": "main-menu",
-        "menu_type_desktop": "dropdown",
+        "logo_position": "middle-center",
+        "menu": "everlast",
+        "menu_type_desktop": "mega",
         "sticky_header_type": "on-scroll-up",
         "show_line_separator": true,
         "color_scheme": "scheme-1",

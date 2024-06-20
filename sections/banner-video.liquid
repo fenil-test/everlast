@@ -1,0 +1,59 @@
+{{ 'banner-video-section.css' | asset_url | stylesheet_tag }}
+
+
+<div class="banner-video-section">
+    <div class="page-width">
+        <div class="banner-video">
+            {{ section.settings.video | video_tag: autoplay: true, loop: true, muted: true, controls: false , width:section.settings.video.width}}
+        </div>
+        <div class="banner-video-text">
+            <h6 style="color:{{ section.settings.color }}">{{ section.settings.caption }}</h6>
+            <h1 style="color:{{ section.settings.color }}">{{ section.settings.heading }}</h1>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+    {
+      "name": "Banner video",
+      "tag": "section",
+      "class": "section",
+      "disabled_on": {
+        "groups": ["header", "footer"]
+      },
+      "settings": [
+        {
+          "type": "header",
+          "content": "t:sections.video.settings.header__1.content"
+        },
+        {
+          "type": "video",
+          "id": "video",
+          "label": "t:sections.video.settings.video.label"
+        },
+        {
+            "type": "text",
+            "id": "caption",
+            "label": "Caption",
+            "default": "SHOP BOXING GLOVES"
+        },
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading",
+            "default": "SAVE UP TO 60%"
+        },
+        {
+            "type": "color",
+            "id": "color",
+            "default": "#fff",
+            "label": "Color"
+        }
+      ],
+      "presets": [
+        {
+          "name": "Banner video"
+        }
+      ]
+    }
+    {% endschema %}

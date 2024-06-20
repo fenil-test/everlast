@@ -1700,7 +1700,8 @@ details[open] > .share-button__fallback {
 .field__label,
 .customer .field label {
   font-size: 1.6rem;
-  left: calc(var(--inputs-border-width) + 2rem);
+
+  left: 15%;
   top: calc(1rem + var(--inputs-border-width));
   margin-bottom: 0;
   pointer-events: none;
@@ -1755,9 +1756,14 @@ details[open] > .share-button__fallback {
   overflow: hidden;
   padding: 0;
   position: absolute;
-  right: 0;
+  left: -3%;
   top: 0;
+  z-index: 1;
   width: 4.4rem;
+}
+
+.field{
+  border-bottom: 1px solid #0000001A
 }
 
 .field__button > svg {
@@ -2221,10 +2227,8 @@ product-info .loading__spinner:not(.hidden) ~ *,
 
 .announcement-bar__message {
   text-align: center;
-  padding: 1rem 0;
   margin: 0;
   letter-spacing: 0.1rem;
-  min-height: 3.8rem;
 }
 
 .announcement-bar-slider--fade-in-next .announcement-bar__message,
@@ -2329,6 +2333,9 @@ product-info .loading__spinner:not(.hidden) ~ *,
   display: grid;
   grid-template-areas: 'left-icons heading icons';
   grid-template-columns: 1fr 2fr 1fr;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   align-items: center;
 }
 
@@ -2411,7 +2418,6 @@ product-info .loading__spinner:not(.hidden) ~ *,
 
 .header__heading-link {
   display: inline-block;
-  padding: 0.75rem;
   text-decoration: none;
   word-break: break-word;
 }
@@ -2481,6 +2487,7 @@ product-info .loading__spinner:not(.hidden) ~ *,
 .header__icons {
   display: flex;
   grid-area: icons;
+  align-items: baseline;
   justify-self: end;
   padding-right: 0.8rem;
 }
@@ -2524,8 +2531,8 @@ product-info .loading__spinner:not(.hidden) ~ *,
 
 .header__icon,
 .header__icon--cart .icon {
-  height: 4.4rem;
-  width: 4.4rem;
+  height: 3.6rem;
+  width: 6rem;
   padding: 0;
 }
 
@@ -2641,10 +2648,6 @@ details[open] .modal-overlay::after {
   top: calc((var(--inputs-margin-offset) / 2));
 }
 
-.search-modal__form {
-  width: 100%;
-}
-
 .search-modal__close-button {
   position: absolute;
   right: 0.3rem;
@@ -2661,10 +2664,7 @@ details[open] .modal-overlay::after {
 }
 
 @media screen and (min-width: 990px) {
-  .search-modal__form {
-    max-width: 74.2rem;
-  }
-
+ 
   .search-modal__close-button {
     position: initial;
     margin-left: 0.5rem;
@@ -2750,7 +2750,7 @@ details[open] > .header__submenu {
 }
 
 .header__menu-item {
-  padding: 1.2rem;
+  padding: 1.3rem 2rem;
   text-decoration: none;
   color: rgba(var(--color-foreground), 0.75);
 }
@@ -3453,4 +3453,21 @@ details-disclosure > details {
   .animate--hover-vertical-lift .button:not([disabled]).button--secondary:hover:after {
     --border-offset: 0px; /* Prevent the border from growing on buttons when this effect is on. */
   }
+}
+
+
+.header-nav-image{
+  display: flex;
+  width: 50%;
+  align-items: center ;
+}
+
+.header__menu-item{
+  font-weight: var(--font-heading-weight);
+  color: var(--primary-color);
+  text-transform: uppercase;
+}
+
+predictive-search{
+  width: 15%;
 }

@@ -198,3 +198,27 @@ slideshow-component:not(.page-width) .slider-buttons {
   opacity: 0;
   transform: scale(0.8);
 }
+
+
+.announcement-bar_right{
+  width: 25%;
+}
+
+.announcement-bar .slideshow__slide{
+  width: 50%;
+}
+
+.announcement-bar_left{
+  width: 25%;
+  text-align: end;
+}
+
+.announcement-bar .grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.announcement-bar_left span:not( .announcement-bar_left span:nth-child(1) ){
+  margin-left: 26px;
+}
