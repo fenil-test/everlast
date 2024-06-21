@@ -1,5 +1,7 @@
-.banner-video-section video{
+.banner-video-section video {
     width: 100%;
+    max-height: 600px;
+    object-fit: cover;
 }
 
 .banner-video-section{
@@ -18,6 +20,7 @@
 .banner-video-text h1{
     margin: 40px 0px;
     line-height: 74.4px;
+    letter-spacing: 5px;
 }
 
 .banner-video-text h6{
@@ -37,4 +40,56 @@
     width: 100%;
     height: 100%;
     background-color: rgba(0,0,0,0.5);
+}
+
+.banner-video-texts {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 40px;
+    position: relative;
+}
+
+.banner-video-contanet{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+}
+
+.banner-video-texts span{
+    margin-left: 40px;
+}
+
+.banner-video-texts:before {
+    content: "";
+    position: absolute;
+    top: 40%;
+    left: 0%;
+    background: #fff;
+    width: 16px;
+    height: 4px;
+    border-radius: 3.5px;
+}
+
+.banner-video-contanet .banner-video-texts:last-child:after{
+    content: "";
+    position: absolute;
+    top: 40%;
+    right: -25%;
+    background: #fff;
+    width: 16px;
+    height: 4px;
+    border-radius: 3.5px;
+}
+
+.banner-video-btn{
+    padding: 15px 50px;
+    color: var(--primary-color);
+    margin-top: 50px;
+    display: inline-block;
+    font-weight: var(--font-heading-weight);
+    text-decoration: none;
+    line-height: 19.2px;
+    letter-spacing: 0.2em;
 }

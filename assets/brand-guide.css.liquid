@@ -2,17 +2,17 @@
 
 /* CUSTOM FONT FAMILY START */
 {% if settings.enable_custom_font and settings.header_font_name != blank and settings.header_font_url != blank %}
-  {% if settings.header_font_url contains 'googleapis' %}
+  {% if settings.header_font_url contains 'googleapis' or settings.header_font_url contains 'cdn.shopify.com' %}
     @import url('{{ settings.header_font_url }}');
   {% endif %}
 {% endif %}
 {% if settings.enable_custom_font and settings.body_font_name != blank and settings.body_font_url != blank %}
-  {% if settings.body_font_url contains 'googleapis' %}
+  {% if settings.body_font_url contains 'googleapis' or settings.header_font_url contains 'cdn.shopify.com' %}
     @import url('{{ settings.body_font_url }}');
   {% endif %}
 {% endif %}
 {% if settings.enable_custom_font and settings.header_font_name != blank and settings.header_font_url != blank %}
-  {% unless settings.header_font_url contains 'googleapis' %}
+  {% unless settings.header_font_url contains 'googleapis'   %}
     @font-face {
       font-family: {{ settings.header_font_name }};
       src: url('{{ settings.header_font_url }}');

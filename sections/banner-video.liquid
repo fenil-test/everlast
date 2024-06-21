@@ -9,6 +9,14 @@
         <div class="banner-video-text">
             <h6 style="color:{{ section.settings.color }}">{{ section.settings.caption }}</h6>
             <h1 style="color:{{ section.settings.color }}">{{ section.settings.heading }}</h1>
+            <div class="banner-video-contanet">
+              {% for block in section.blocks %}
+                  <div class="banner-video-texts">
+                    <span style="color:{{ section.settings.color }}" class="small_body">{{ block.settings.text }}</span>
+                  </div>
+              {% endfor %}
+            </div>
+            <a href="#" class="banner-video-btn small_body" style="background:{{ section.settings.btn_color }}">{{ section.settings.btn_text }}</a>
         </div>
     </div>
 </div>
@@ -48,11 +56,45 @@
             "id": "color",
             "default": "#fff",
             "label": "Color"
+        },
+        {
+            "type": "text",
+            "id": "btn_text",
+            "label": "Button label",
+            "default": "SHOP NOW"
+        },
+        {
+            "type": "color",
+            "id": "btn_color",
+            "default": "#fff",
+            "label": "Button color"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "name": "Text",
+          "settings": [
+            {
+              "type": "text",
+              "id": "text",
+              "default": "NEW LOW PRICE",
+              "label": "Text"
+            }
+          ]
         }
       ],
       "presets": [
         {
-          "name": "Banner video"
+          "name": "Banner video",
+          "blocks": [
+            {
+              "type": "text"
+            },
+            {
+              "type": "text"
+            }
+          ]
         }
       ]
     }

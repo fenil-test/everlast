@@ -1,0 +1,34 @@
+.product-timer-details{
+    width: 34%;
+}
+
+.product-timer-details span{
+    line-height: 37px;
+    font-weight: var(--font-heading-weight);
+}
+
+.product-timer img{
+    object-fit: contain;
+    height: auto;
+}
+
+.show-timer{
+    width: 75%;
+}
+
+.timer-contant{
+    width: 25%;
+}
+
+.timer-contant span{
+    line-height: 30px;
+    font-weight: var(--font-heading-weight);
+}
+
+.show-timer{
+    background-color: var(--quaternary-color);
+}
+
+.timer-product{
+    padding: 60px 0px 10px 0px;
+}
