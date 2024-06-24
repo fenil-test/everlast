@@ -1,5 +1,5 @@
 .product-timer-details{
-    width: 34%;
+    width: 36%;
 }
 
 .product-timer-details span{
@@ -14,15 +14,24 @@
 
 .show-timer{
     width: 75%;
+    padding: 0px 70px 0px 40px;
+    color: var(--tertiary-color);
 }
 
 .timer-contant{
     width: 25%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.timer-contant span{
+.timer-contant span {
     line-height: 30px;
     font-weight: var(--font-heading-weight);
+    position: absolute;
+    color: var(--tertiary-color);
+    text-align: center;
 }
 
 .show-timer{
@@ -31,4 +40,28 @@
 
 .timer-product{
     padding: 60px 0px 10px 0px;
+}
+
+.timer-product .product-timer {
+    max-width: 124px;
+    margin-top: -20px;
+}
+
+.fix-timer span:nth-child(1){
+    line-height: 37px;
+    color: var(--tertiary-color);
+}
+
+.fix-timer span:nth-child(2){
+    line-height: 37px;
+    color: var(--tertiary-color) ;
+}
+
+.timer-dot{
+    margin: 0px 14px;
+    color: var(--tertiary-color);
+}
+
+.page-width.d-flex.gap-10 {
+    align-items: stretch;
 }

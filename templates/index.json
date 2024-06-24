@@ -93,7 +93,8 @@
           "settings": {
             "title3": "Don’t know where to start?",
             "text2": "<p>GLOVE FINDER<\/p>",
-            "text4": "<p>Answer a few questions and we’ll get you to the perfect glove.<\/p>"
+            "text4": "<p>Answer a few questions and we’ll get you to the perfect glove.<\/p>",
+            "color": "#ffffff"
           }
         },
         "image_tJi4DV": {
@@ -103,7 +104,8 @@
             "title": "BOXING",
             "image1": "shopify:\/\/shop_images\/1820206_1_2-removebg-preview_1.png",
             "title1": "MMA",
-            "text": "<p>01. WHICH SPORT ARE YOUR GLOVES FOR?<\/p>"
+            "text": "<p>01. WHICH SPORT ARE YOUR GLOVES FOR?<\/p>",
+            "color1": "#ffffff"
           }
         }
       },
@@ -121,7 +123,96 @@
       "settings": {
         "image": "shopify:\/\/shop_images\/mx2_gloves_photos-068-removebg-preview_1.png",
         "heading": "The champions fight! 35% off sitewide\u2028use code: <strong>champ35<\/strong>",
-        "heading1": "Wholesale Program"
+        "heading1": "Wholesale Program",
+        "image1": "shopify:\/\/shop_images\/Rectangle_12.png"
+      }
+    },
+    "featured_collection_iMeiJ6": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "TOP PICKS",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "top-picks",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "bg-color": "#f4f4f4",
+        "card-bg-color": "#ffffff",
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "standard",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "multicolumn_baRBNp": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_fKGJJR": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Ellipse_40.png",
+            "title": "Upgrade",
+            "text": "<p>“I was attached to my old everlast gloves but thanks to the memorial day sale I was able to upgrade to better pair of everlast gloves and I love them.”<\/p>",
+            "link_label": "Buy Now",
+            "link": "#"
+          }
+        },
+        "column_iPqWHE": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/dsfdEllipse_40.png",
+            "title": "Great gloves!",
+            "text": "<p>“I am a beginner that recently wanted to get into boxing. The gloves are excellent and comfortable. I got the 14oz because I saw somewhere that 14oz was sized for my hat and wt. Now that I have used them I think I should have went with the ”<\/p>",
+            "link_label": "Buy Now",
+            "link": ""
+          }
+        },
+        "column_Yq4dqK": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/dfsEllipse_40.png",
+            "title": "Well made, don't feel heavy",
+            "text": "<p>“Love the brand, but when I had to return an item which didn't fit I was basically told: You know how to find us, just ship it back. I would strongly recommend Everlast to consider at least providing a return shipment label which can be printed b”<\/p>",
+            "link_label": "Buy Now",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_fKGJJR",
+        "column_iPqWHE",
+        "column_Yq4dqK"
+      ],
+      "settings": {
+        "title": "59,655+",
+        "title1": "REVIEWS",
+        "heading_size": "h2",
+        "bg-color": "#f4f4f4",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     }
   },
@@ -129,6 +220,8 @@
     "banner_video_zTLqtC",
     "collection_slider_3JneUJ",
     "compare_product_TimTwe",
-    "timer_section_KUPQzT"
+    "timer_section_KUPQzT",
+    "featured_collection_iMeiJ6",
+    "multicolumn_baRBNp"
   ]
 }

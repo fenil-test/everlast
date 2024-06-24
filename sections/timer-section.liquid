@@ -1,8 +1,8 @@
 {{ 'timer-section.css' | asset_url | stylesheet_tag }}
 
 <div class="timer-product">
-  <div class="page-width d-flex">
-    <div class="show-timer d-flex">
+  <div class="page-width d-flex gap-10">
+    <div class="show-timer d-flex j-between">
       <div class="product-timer-details">
         <span class="medium_body">
           {{ section.settings.heading }}
@@ -26,8 +26,26 @@
           height="{{ section.settings.image.height }}"
           size="(min-width: 300px) 124px">
       </div>
-      <div class="timer-text">
-
+      <div class="timer-text d-flex">
+          <div class="fix-timer">
+            <span class="h3">0</span>
+            <span class="h6">D</span>
+          </div>
+          <span class="h4 timer-dot">:</span>
+          <div class="fix-timer">
+            <span class="h3">00</span>
+            <span class="h6">H</span>
+          </div>
+          <span class="h4 timer-dot">:</span>
+          <div class="fix-timer">
+            <span class="h3">00</span>
+            <span class="h6">M</span>
+          </div>
+          <span class="h4 timer-dot">:</span>
+          <div class="fix-timer">
+            <span class="h3">00</span>
+            <span class="h6">S</span>
+          </div>
       </div>
     </div>
     <div class="timer-contant">
@@ -54,6 +72,49 @@
 
   </div>
 </div>
+
+<script>
+
+      let setDate = new Date("june 28, 2024 12:00:00")
+      let timer = document.querySelector('.timer-text');
+      let interval = setInterval(()=>{
+      let nowDate = new Date()
+      let diffDate = setDate - nowDate;
+      
+      let days    = Math.floor( diffDate / (24 * 60 * 60 * 1000) )
+      let hours   = Math.floor(( diffDate % (1000*60*60*24) ) / (1000*60*60));
+      let minutes = Math.floor(( diffDate % (1000*60*60) ) / (1000*60));
+      let seconds = Math.floor(( diffDate % (1000*60) ) / 1000);
+      console.log(days);
+      console.log(hours);
+      console.log(minutes);
+      console.log(seconds);
+
+      timer.innerHTML = `
+      <div class="fix-timer">
+            <span class="h3">${days}</span>
+            <span class="h6">D</span>
+          </div>
+          <span class="h4 timer-dot">:</span>
+          <div class="fix-timer">
+            <span class="h3">${hours}</span>
+            <span class="h6">H</span>
+          </div>
+          <span class="h4 timer-dot">:</span>
+          <div class="fix-timer">
+            <span class="h3">${minutes}</span>
+            <span class="h6">M</span>
+          </div>
+          <span class="h4 timer-dot">:</span>
+          <div class="fix-timer">
+            <span class="h3">${seconds}</span>
+            <span class="h6">S</span>
+          </div>               
+      `
+
+    },1000)
+    
+</script>
 
 {% schema %}
   {

@@ -265,8 +265,8 @@
 
 @media screen and (min-width: 750px) {
   .card__information {
-    padding-bottom: 1.7rem;
-    padding-top: 1.7rem;
+    padding-bottom: 0rem;
+    padding-top: 1.1rem;
   }
 }
 
@@ -593,3 +593,70 @@
     clip-path: polygon(var(--shape--blob-5));
   }
 }
+
+.collection .card__heading{
+  font-weight: var(--font-heading-weight);
+  line-height: 20px;
+}
+
+.collection .product-grid .grid__item{
+  padding: 16px 20px 31px 20px;
+  border: 1px solid #0000001A;
+}
+
+.collection .product-grid{
+  padding: 0px 30px 30px 30px;
+}
+
+.collection .price__container .price__regular{
+  font-weight: var(--font-heading-weight);
+}
+
+.collection .card__badge{
+  display: none;
+}
+
+.featured-product-tag{
+  background-color: var(--secondary-color);
+  padding: 5px 15px;
+  color: var(--primary-color);
+  position: absolute;
+  z-index: 111;
+  border-radius: 60px;
+  line-height: normal;
+  
+}
+
+.collection .collection__title{
+  padding-bottom: 67px;
+  padding-top: 72px;
+}
+
+.collection .card__media{
+  display: flex;
+  justify-content: center;
+}
+
+.collection .card__media .media{
+  max-width: 250px;
+}
+
+.collection .card__media .media img{
+  object-fit: contain;
+}
+
+.featured-product-heart{
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 11;
+}
+
+.collection  button svg{
+  margin-right: 9px;
+}
+
+.collection button{
+  margin-top: 16px  ;
+}
+
