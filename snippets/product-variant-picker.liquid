@@ -89,6 +89,19 @@
         </div>
       {%- endif -%}
     {%- endfor -%}
+    <div class="featured-product-variants d-flex">
+      {% for variant in product.variants %}
+        <div class="variant">
+       
+          {% assign variant_image = variant.featured_image | default: product.featured_image %}
+          {% if variant_image %}
+            <img src="{{ variant_image | img_url: width: 100 }}" alt="{{ variant.title }}" >
+          {% else %}
+            <p>No image available for this variant.</p>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
     <script type="application/json">
       {{ product.variants | json }}
     </script>

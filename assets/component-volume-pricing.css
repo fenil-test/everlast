@@ -68,3 +68,37 @@ volume-pricing show-more-button {
   font-size: 1.2rem;
   letter-spacing: 0.07rem;
 }
+
+.product-media-container.constrain-height .media {
+  padding-top: 0;
+}
+
+.product__view-details{
+  display: none;
+}
+
+.featured-product .price__badge-sale{
+  display: none ;
+}
+.featured-product .featured-product-title{
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+}
+
+.featured-product .featured-product-title h2{
+  margin: 0px 0px 22px 0px;
+}
+
+.collection .product-form__submit{
+  margin-bottom: 0;
+}
+
+.featured-product .variant{
+  max-width: 50px;
+}
+
+.featured-product-variants{
+  column-gap:10px ;
+}
+

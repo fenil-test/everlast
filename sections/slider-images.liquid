@@ -1,0 +1,259 @@
+{{ 'slider-images.css' |  asset_url |  stylesheet_tag }}
+<style>
+    .swiper-image-section  .swiper {
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .swiper-image-section  .swiper-slide {
+      background-size: cover;
+      background-position: center;
+    }
+
+    .swiper-image-section  .slider-imgs {
+      width: 100%;
+    }
+
+    .swiper-image-section  .slider-imgs1 {
+      box-sizing: border-box;
+      padding: 10px 0;
+    }
+
+    .swiper-image-section  .slider-imgs1 .swiper-slide {
+      height: 100%;
+    }
+
+    .swiper-image-section  .slider-imgs1 .swiper-slide-thumb-active {
+      opacity: 1;
+    }
+
+    .swiper-image-section .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .swiper-slide picture {
+    width: 100%;
+    max-height: 700px;
+    height: 100%;
+}
+</style>
+
+<div class="swiper-image-section">
+    <div class="page-width">
+        <div class="swiper-image">
+         <div class="slider-imgs swiper">
+          <div class="swiper-wrapper">
+            {% for block in section.blocks %}
+              {% case block.type %}
+                {% when 'slider' %}
+                    <div class="swiper-slide">
+                      <picture >
+                        <source media="(min-width:300px)" srcset="{{ block.settings.slider-img |  image_url: width: 2500  }}">
+                        {{
+                          block.settings.slider-img | image_url: width: 100 | image_tag:
+                          loading: lazyloading,
+                          width: block.settings.slider-img.width,
+                          height: block.settings.slider-img.height,
+                          alt: block.settings.slider-img.alt
+                        }}
+                      </picture>
+                    </div>
+              {% endcase %}
+             {% endfor %}
+          </div>
+         </div>
+          <div class="slider-images-logo">
+            <img 
+              src="{{ section.settings.image1 | image_url: width: 100 }}"
+              alt="{{ section.settings.image1.alt }}" 
+              srcset="
+                  {%- if section.settings.image1.width >= 165 -%}{{ section.settings.image1 | image_url: width: 165 }} 165w,{%- endif -%}
+                  {%- if section.settings.image1.width >= 330 -%}{{ section.settings.image1 | image_url: width: 330 }} 330w,{%- endif -%}
+                  {%- if section.settings.image1.width >= 535 -%}{{ section.settings.image1 | image_url: width: 535 }} 535w,{%- endif -%}
+                  {%- if section.settings.image1.width >= 750 -%}{{ section.settings.image1 | image_url: width: 750 }} 750w,{%- endif -%}
+                  {%- if section.settings.image1.width >= 1000 -%}{{ section.settings.image1 | image_url: width: 1000 }} 1000w,{%- endif -%}
+                  {%- if section.settings.image1.width >= 1500 -%}{{ section.settings.image1 | image_url: width: 1500 }} 1500w,{%- endif -%}
+                  {%- if section.settings.image1.width >= 3000 -%}{{ section.settings.image1 | image_url: width: 3000 }} 3000w,{%- endif -%}
+                  {{ section.settings.image1 | image_url }} {{ section.settings.image1.width }}w
+              "
+              width="100%"
+              height="100%"
+              size="(min-width: 300px) 250px"
+            >
+          </div>
+          <div class="swiper-image-text">
+              <ul class="swiper-wrapper">
+                {%  for block in section.blocks %}
+                  {% case block.type %}
+                    {% when 'heading' %}
+                      <h3>{{ block.settings.heading }}</h3>
+                      <p class="medium_body slider-images-caption">{{ block.settings.text }}</p>
+                      {% when 'buttons' %}
+                      
+                    {% else %}
+                      
+                  {% endcase %}
+                {% endfor %} 
+              </ul>
+        </div>
+        <div  thumbsSlider=""  class="swiper-block-images slider-imgs1 swiper">
+           <ul class="swiper-wrapper">
+            {% for block in section.blocks %}
+              {% case block.type %}
+                {% when 'slider' %}
+                  <li class="swiper-slide">
+                    <picture>
+                      <source media="(min-width:300px)" srcset="{{ block.settings.slider-img |  image_url: width: 250  }}">
+                      {{
+                        block.settings.slider-img | image_url: width: 100 | image_tag:
+                        loading: lazyloading,
+                        width: block.settings.slider-img.width,
+                        height: block.settings.slider-img.height,
+                        alt: block.settings.slider-img.alt
+                      }}
+                    </picture>
+                   </li>
+              {% endcase %}
+            {% endfor %}
+           </ul>
+           <div class="swiper-right-icon">
+            {%  render 'slider-right-icon' %}
+           </div>
+           <div class="swiper-left-icon"></div>
+        </div>
+        
+    </div>
+</div>  
+
+<script defer="defer">
+  document.addEventListener("DOMContentLoaded", function() {
+    
+    var swiper = new Swiper(".slider-imgs1", {
+      loop: true,
+      spaceBetween: 10,
+      slidesPerView: 6,
+      freeMode: true,
+      watchSlidesProgress: true,     
+      navigation: {
+        nextEl: ".swiper-right-icon",
+        prevEl: ".swiper-left-icon",
+      },
+    });
+    var swiper2 = new Swiper(".slider-imgs", {
+      spaceBetween: 10,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      thumbs: {
+        swiper: swiper,
+      }
+      
+    });
+  });
+</script>
+
+{% schema %}
+    {
+      "name": "Slider images",
+      "tag": "section",
+      "class": "section",
+      "disabled_on": {
+        "groups": ["header", "footer"]
+      },
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:sections.image-banner.settings.image.label"
+        },
+        {
+          "type": "image_picker",
+          "id": "image1",
+          "label": "t:sections.image-banner.settings.image_2.label"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "heading",
+          "name": "t:sections.image-banner.blocks.heading.name",
+          "limit": 1,
+          "settings": [
+            {
+              "type": "inline_richtext",
+              "id": "heading",
+              "default": "Muhammad Ali",
+              "label": "t:sections.image-banner.blocks.heading.settings.heading.label"
+            },
+            {
+              "type": "text",
+              "id": "text",
+              "default": "Ali was one of the greatest boxers of all time and a global icon. He wore Everlast gear during many of his famous fights.",
+              "label": "Text"
+            }
+          ]
+        },
+        {
+          "type": "buttons",
+          "name": "t:sections.image-banner.blocks.buttons.name",
+          "limit": 1,
+          "settings": [
+            {
+              "type": "text",
+              "id": "button_label_1",
+              "default": "Button label",
+              "label": "t:sections.image-banner.blocks.buttons.settings.button_label_1.label",
+              "info": "t:sections.image-banner.blocks.buttons.settings.button_label_1.info"
+            },
+            {
+              "type": "url",
+              "id": "button_link_1",
+              "label": "t:sections.image-banner.blocks.buttons.settings.button_link_1.label"
+            },
+            {
+              "type": "checkbox",
+              "id": "button_style_secondary_1",
+              "default": false,
+              "label": "t:sections.image-banner.blocks.buttons.settings.button_style_secondary_1.label"
+            },
+            {
+              "type": "text",
+              "id": "button_label_2",
+              "default": "Button label",
+              "label": "t:sections.image-banner.blocks.buttons.settings.button_label_2.label",
+              "info": "t:sections.image-banner.blocks.buttons.settings.button_label_2.info"
+            }
+          ]
+        },
+        {
+          "type": "slider",
+          "name": "slider",
+          "limit": 10,
+          "settings": [
+            {
+              "type": "image_picker",
+              "id": "slider-img",
+              "label": "Slider image"
+            }
+          ]
+        }
+      ],
+      "presets": [
+        {
+          "name": "Slider images",
+          "blocks": [
+            {
+              "type": "heading"
+            },
+            {
+              "type": "buttons"
+            }
+          ]
+        }
+      ]
+    }
+{% endschema %}

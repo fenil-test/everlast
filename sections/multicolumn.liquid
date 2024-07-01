@@ -2,6 +2,32 @@
 {{ 'component-slider.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
+
+    .swiper {
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+  .section-{{ section.id }}-padding .multicolumn-list__item{
+    box-shadow: 0px 2px 24px 0px #0000000A;
+    background: {{ section.settings.card_bg_color }};
+  }
+
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
@@ -48,9 +74,9 @@
         {%- endif -%}
       </div>
     {%- endunless -%}
-    <slider-component class="slider-mobile-gutter" style="background-color: {{ section.settings.bg-color }};">
+    <slider-component class="swiper mySwiper multicolumn-slider-component" style="background-color: {{ section.settings.bg-color }};">
       <ul
-        class="multicolumn-list contains-content-container grid grid--{{ section.settings.columns_mobile }}-col-tablet-down grid--{{ section.settings.columns_desktop }}-col-desktop{% if show_mobile_slider %} slider slider--tablet grid--peek{% endif %}"
+        class="swiper-wrapper multicolumn-list"
         id="Slider-{{ section.id }}"
         role="list"
       >
@@ -74,7 +100,7 @@
 
           <li
             id="Slide-{{ section.id }}-{{ forloop.index }}"
-            class="multicolumn-list__item grid__item{% if section.settings.swipe_on_mobile %} slider__slide{% endif %}{% if section.settings.column_alignment == 'center' %} center{% endif %}{{ empty_column }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+            class="swiper-slide multicolumn-list__item"
             {{ block.shopify_attributes }}
             {% if settings.animations_reveal_on_scroll %}
               data-cascade
@@ -130,21 +156,43 @@
               <div class="multicolumn-card__info">
                 
                 {%- if block.settings.text != blank -%}
-                  <div class="rte small_body">{{ block.settings.text }}</div>
+                  <div class="rte small_body">
+                    {{ block.settings.text }}
+                    <div class="multicolumn-date">
+                    <span>{{ block.settings.name }}</span>
+                    <span>{{ block.settings.date }}</span>
+                  </div>
+                  </div>
                 {%- endif -%}
-                {%- if block.settings.link_label != blank -%}
-                  <a
-                    class="link animate-arrow"
-                    {% if block.settings.link == blank %}
-                      role="link" aria-disabled="true"
-                    {% else %}
-                      href="{{ block.settings.link }}"
-                    {% endif %}
-                  >
-                    {{- block.settings.link_label | escape -}}
-                    <span class="icon-wrap">&nbsp;{% render 'icon-arrow' %}</span></a
-                  >
-                {%- endif -%}
+               
+                
+              </div>
+
+              {%- assign product_form_id = 'product-form-' | append: section.id -%}
+
+              <div class="multicolumn-buy-btn" data-product-title="{{ block.settings.product.title |  replace: " ", "-" |  downcase}}">
+                  <div class="multicolumn-product">
+                    <div class="multicolumn-product-img">
+                      <img src="{{ block.settings.product.featured_image |  image_url: width: 60}}" 
+                        srcset="{{ block.settings.product.featured_image | image_url: width: 100 }} 100w" 
+                        sizes="(min-width: 300px) 60px"
+                        width="100%"
+                        height="100%"
+                        alt="{{ block.settings.product.featured_image.alt }}"
+                      >
+                    </div>
+                    <div class="multicolumn-product-details">
+                      <div>
+                        <span class="small_body">{{  block.settings.product.title }}</span>
+                      </div>
+                      <div class="multicolumn-product-price">
+                        <span>{{ block.settings.product.price | money}}</span>
+                      </div>
+                    </div>
+                  </div>  
+                  <div>
+                    <button class="buy-btnss">Buy Now</button>
+                  </div>
               </div>
             </div>
           </li>
@@ -196,6 +244,34 @@
   </div>
 </div>
 
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 3,
+      spaceBetween: 20,
+      freeMode: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+  });
+
+  let buy_btns =  document.querySelectorAll('.buy-btnss');
+  console.log(buy_btns);
+  let productTitle =  document.querySelectorAll('.multicolumn-buy-btn');
+  let productURL =  'https://harshil-soni-test.myshopify.com/products/'
+  buy_btns.forEach((e,index)=>{
+    e.addEventListener('click',()=>{
+        productGetTitle = productTitle[index].getAttribute('data-product-title');
+        redirectUrl =`${productURL}${productGetTitle}`; 
+        console.log("URL",redirectUrl);
+        window.location.href = redirectUrl
+    })
+  })
+</script>
+
+
 {% schema %}
 {
   "name": "t:sections.multicolumn.name",
@@ -216,6 +292,12 @@
       "id": "title1",
       "default": "Multicolumn",
       "label": "t:sections.multicolumn.settings.title.label"
+    },
+    {
+      "type": "color",
+      "id": "card_bg_color",
+      "default": "#fff",
+      "label": "Card background color"
     },
     {
       "type": "select",
@@ -263,6 +345,7 @@
       "default": "full",
       "label": "t:sections.multicolumn.settings.image_width.label"
     },
+   
     {
       "type": "select",
       "id": "image_ratio",
@@ -417,6 +500,23 @@
           "id": "text",
           "default": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
           "label": "t:sections.multicolumn.blocks.column.settings.text.label"
+        },
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Select product"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "default":"Ryan H.",
+          "label": "Review name"
+        },
+        {
+          "type": "text",
+          "id": "date",
+          "default":"04/08/2023",
+          "label": "Review date"
         },
         {
           "type": "text",

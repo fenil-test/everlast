@@ -166,6 +166,9 @@
             "image": "shopify:\/\/shop_images\/Ellipse_40.png",
             "title": "Upgrade",
             "text": "<p>“I was attached to my old everlast gloves but thanks to the memorial day sale I was able to upgrade to better pair of everlast gloves and I love them.”<\/p>",
+            "product": "elite-training-gloves-2",
+            "name": "Dean E",
+            "date": "04\/08\/2023",
             "link_label": "Buy Now",
             "link": "#"
           }
@@ -176,6 +179,9 @@
             "image": "shopify:\/\/shop_images\/dsfdEllipse_40.png",
             "title": "Great gloves!",
             "text": "<p>“I am a beginner that recently wanted to get into boxing. The gloves are excellent and comfortable. I got the 14oz because I saw somewhere that 14oz was sized for my hat and wt. Now that I have used them I think I should have went with the ”<\/p>",
+            "product": "titan-mma-glove",
+            "name": "Ryan H.",
+            "date": "04\/08\/2023",
             "link_label": "Buy Now",
             "link": ""
           }
@@ -186,7 +192,23 @@
             "image": "shopify:\/\/shop_images\/dfsEllipse_40.png",
             "title": "Well made, don't feel heavy",
             "text": "<p>“Love the brand, but when I had to return an item which didn't fit I was basically told: You know how to find us, just ship it back. I would strongly recommend Everlast to consider at least providing a return shipment label which can be printed b”<\/p>",
+            "product": "mma-omnistrike-heavy-bag",
+            "name": "Lisa C.",
+            "date": "04\/08\/2023",
             "link_label": "Buy Now",
+            "link": ""
+          }
+        },
+        "column_XAa8xf": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/dsfdEllipse_40_a3b05139-3beb-4c14-8235-9726831f5a5d.png",
+            "title": "Well made, don't feel heavy",
+            "text": "<p>“Love the brand, but when I had to return an item which didn't fit I was basically told: You know how to find us, just ship it back. I would strongly recommend Everlast to consider at least providing a return shipment label which can be printed b”<\/p>",
+            "product": "mma-omnistrike-heavy-bag",
+            "name": "Ryan H.",
+            "date": "04\/08\/2023",
+            "link_label": "",
             "link": ""
           }
         }
@@ -194,11 +216,13 @@
       "block_order": [
         "column_fKGJJR",
         "column_iPqWHE",
-        "column_Yq4dqK"
+        "column_Yq4dqK",
+        "column_XAa8xf"
       ],
       "settings": {
         "title": "59,655+",
         "title1": "REVIEWS",
+        "card_bg_color": "#ffffff",
         "heading_size": "h2",
         "bg-color": "#f4f4f4",
         "image_width": "full",
@@ -214,6 +238,154 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "slider_images_Wfbf7c": {
+      "type": "slider-images",
+      "blocks": {
+        "heading_fnVQCA": {
+          "type": "heading",
+          "settings": {
+            "heading": "Muhammad Ali",
+            "text": "Ali was one of the greatest boxers of all time and a global icon. He wore Everlast gear during many of his famous fights."
+          }
+        },
+        "buttons_CyjDPb": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "SHOP Ali’s style",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "Button label"
+          }
+        },
+        "slider_PfcphT": {
+          "type": "slider",
+          "settings": {
+            "slider-img": "shopify:\/\/shop_images\/Rectangle_25.png"
+          }
+        },
+        "slider_c6pNzr": {
+          "type": "slider",
+          "settings": {
+            "slider-img": "shopify:\/\/shop_images\/Rectangle_26.png"
+          }
+        },
+        "slider_CRBtML": {
+          "type": "slider",
+          "settings": {
+            "slider-img": "shopify:\/\/shop_images\/1Rectangle_27.png"
+          }
+        },
+        "slider_CiCdUr": {
+          "type": "slider",
+          "settings": {
+            "slider-img": "shopify:\/\/shop_images\/Rectangle_28.png"
+          }
+        },
+        "slider_bdP6ab": {
+          "type": "slider",
+          "settings": {
+            "slider-img": "shopify:\/\/shop_images\/Rectangle_29.png"
+          }
+        },
+        "slider_C4JCb3": {
+          "type": "slider",
+          "settings": {
+            "slider-img": "shopify:\/\/shop_images\/Rectangle_30.png"
+          }
+        },
+        "slider_bYG9kY": {
+          "type": "slider",
+          "settings": {
+            "slider-img": "shopify:\/\/shop_images\/Rectangle_28.png"
+          }
+        },
+        "slider_YPfynG": {
+          "type": "slider",
+          "settings": {
+            "slider-img": "shopify:\/\/shop_images\/1Rectangle_27.png"
+          }
+        },
+        "slider_TDgtzB": {
+          "type": "slider",
+          "settings": {
+            "slider-img": "shopify:\/\/shop_images\/Rectangle_26.png"
+          }
+        }
+      },
+      "block_order": [
+        "heading_fnVQCA",
+        "buttons_CyjDPb",
+        "slider_PfcphT",
+        "slider_c6pNzr",
+        "slider_CRBtML",
+        "slider_CiCdUr",
+        "slider_bdP6ab",
+        "slider_C4JCb3",
+        "slider_bYG9kY",
+        "slider_YPfynG",
+        "slider_TDgtzB"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Rectangle_24.png",
+        "image1": "shopify:\/\/shop_images\/Group_115.png"
+      }
+    },
+    "featured_product_x3MQm9": {
+      "type": "featured-product",
+      "blocks": {
+        "title_TD7Tkq": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h2"
+          }
+        },
+        "price_drmaDG": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "variant_picker_zwFqwJ": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector_d6Vwz7": {
+          "type": "quantity_selector",
+          "settings": {
+          }
+        },
+        "buy_buttons_BPdViV": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": true
+          }
+        }
+      },
+      "block_order": [
+        "title_TD7Tkq",
+        "price_drmaDG",
+        "variant_picker_zwFqwJ",
+        "quantity_selector_d6Vwz7",
+        "buy_buttons_BPdViV"
+      ],
+      "settings": {
+        "product": "hand-wraps-120",
+        "color_scheme": "",
+        "secondary_background": false,
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
@@ -222,6 +394,8 @@
     "compare_product_TimTwe",
     "timer_section_KUPQzT",
     "featured_collection_iMeiJ6",
-    "multicolumn_baRBNp"
+    "multicolumn_baRBNp",
+    "slider_images_Wfbf7c",
+    "featured_product_x3MQm9"
   ]
 }

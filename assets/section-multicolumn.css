@@ -44,16 +44,6 @@
   margin-right: auto;
 }
 
-.multicolumn .button {
-  margin-top: 1.5rem;
-}
-
-@media screen and (min-width: 750px) {
-  .multicolumn .button {
-    margin-top: 4rem;
-  }
-}
-
 .multicolumn-list {
   margin-top: 0;
   margin-bottom: 0;
@@ -242,10 +232,6 @@
   max-width: 50px;
 }
 
-.multicolumn .slider-mobile-gutter{
-  padding-bottom: 100px;
-}
-
 .multicolumn .media img{
   width: 100% !important;
   height: auto !important;
@@ -264,15 +250,108 @@
   align-items: center;
 }
 
-.multicloumn-icon{
+.multicolumn .multicloumn-icon{
   margin-left: 16px;
+  text-align: left;
 }
 
-.multicloumn-icon svg{
+.multicolumn .multicloumn-icon svg{
   max-width: 100px;
 }
 
 .multicolumn .multicolumn-list__item{
   padding: 40px 44px;
+  box-sizing: border-box;
+  height: auto;
+
 }
 
+.multicolumn .multicolumn-card__info .rte{
+  text-align: justify;
+  color: var(--primary-color);
+}
+
+.multicolumn .title-wrapper-with-link{
+  padding-top: 100px;
+}
+
+.multicolumn .multicolumn-slider-component{
+  padding-bottom: 100px;  
+}
+
+.multicolumn .multicolumn-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+}
+
+.multicolumn .multicolumn-card__info{
+  padding-bottom: 16px;
+  height: 100%;
+  border-bottom: 1px solid #0F0F0F1A;
+}
+
+.multicolumn .multicolumn-date {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  align-items: end;
+}
+
+.multicolumn .icon-wrap{  
+  display: none;
+}
+
+.multicolumn .multicolumn-card__info .rte {
+  text-align: justify;
+  height: 100%;
+  display: flex;
+  flex-basis: auto;
+  flex-direction: column;
+  align-content: stretch;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.multicolumn .multicolumn-card__info .rte p{
+  margin-bottom: 20px;
+}
+
+.multicolumn .multicolumn-product{
+  display: flex;
+  align-items: center;
+}
+
+.multicolumn .multicolumn-buy-btn{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.multicolumn .multicolumn-product-price{
+  text-align: left;
+}
+
+.multicolumn .multicolumn-product-img{
+  margin-right: 16px;
+}
+
+.multicolumn .multicolumn-product-details .small_body{
+  font-weight: var(--font-heading-weight);
+  color: var(--primary-color);
+}
+
+.multicolumn .buy-btnss{
+  border-radius: 8px;
+  width: 100%;
+  min-width: 100px;
+  background: #000;
+  color: #fff;
+  padding: 12px 22px;
+}
+
+.multicolumn .button:after{
+  box-shadow: none;
+}

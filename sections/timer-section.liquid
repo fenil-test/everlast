@@ -85,11 +85,7 @@
       let hours   = Math.floor(( diffDate % (1000*60*60*24) ) / (1000*60*60));
       let minutes = Math.floor(( diffDate % (1000*60*60) ) / (1000*60));
       let seconds = Math.floor(( diffDate % (1000*60) ) / 1000);
-      console.log(days);
-      console.log(hours);
-      console.log(minutes);
-      console.log(seconds);
-
+ 
       timer.innerHTML = `
       <div class="fix-timer">
             <span class="h3">${days}</span>

@@ -539,7 +539,6 @@ customElements.define('header-drawer', HeaderDrawer);
 class ModalDialog extends HTMLElement {
   constructor() {
     super();
-    console.log(this);
     this.querySelector('[id^="ModalClose-"]').addEventListener('click', this.hide.bind(this, false));
     this.addEventListener('keyup', (event) => {
       if (event.code.toUpperCase() === 'ESCAPE') this.hide();
@@ -1360,3 +1359,6 @@ class AccountIcon extends HTMLElement {
 }
 
 customElements.define('account-icon', AccountIcon);
+
+
+

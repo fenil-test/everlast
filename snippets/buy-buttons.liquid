@@ -84,13 +84,23 @@
               disabled
             {% endif %}
           >
-            <span>
-              {%- if product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
-                {{ 'products.product.sold_out' | t }}
-              {%- else -%}
-                {{ 'products.product.add_to_cart' | t }}
-              {%- endif -%}
-            </span>
+            {% if string != 'Buy-Now' %}
+              <span>
+                {%- if product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
+                  {{ 'products.product.sold_out' | t }}
+                {%- else -%}
+                  {{ 'products.product.add_to_cart' | t }}
+                {%- endif -%}
+              </span>
+              {% else %}
+              <span class="buy-btns" >
+                {%- if product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
+                  {{ 'products.product.sold_out' | t }}
+                {%- else -%}
+                  Buy Now
+                {%- endif -%}
+              </span>
+            {% endif %}
             {%- render 'loading-spinner' -%}
           </button>
           {%- if show_dynamic_checkout -%}

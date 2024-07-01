@@ -91,6 +91,10 @@
       shape: block.settings.swatch_shape,
       help_text: help_text
     %}
+
+    
+    
+    
   {%- elsif picker_type == 'button' -%}
     <input
       type="radio"
@@ -109,6 +113,7 @@
       {{ value -}}
       {{ label_unavailable }}
     </label>
+    
   {%- elsif picker_type == 'dropdown' or picker_type == 'swatch_dropdown' -%}
     <option
       value="{{ value | escape }}"
